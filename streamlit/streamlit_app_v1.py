@@ -9,42 +9,7 @@ import nltk
 
 
 
-
-# load the pickled files
-
-with open('../pickles/arjun_model_3.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
-    
-with open('../pickles/tokenizer_arjun_v1.pkl', 'rb') as tokenizer_file:
-    tokenizer = pickle.load(tokenizer_file)
-    
-# Ok 
-
-# Title for our app
-st.title("Tweet Recognition")
-st.subheader('Is a tweet about a real disaster?')
-
-# Get user input
-
-user_txt = st.text_area('Enter a disaster tweet here to check whether it\'s real or not: ', max_chars = 280)
-
-
-if st.button('Submit'):
-  if len(user_txt) > 0:
-    pred_prob = model.predict(tweet_to_input(user_txt,tokenizer=tokenizer))[0][0]
-    
-    if pred_prob > 0.8:
-        st.write(f"This disaster notification is: REAL! Please stay safe!")
-    elif pred_prob > 0.4:
-        st.write(f"This disaster notification might be: REAL. Please work with your local news channel to learn more.")
-    else:
-        st.write(f"This tweet is: NOT REAL. Please enjoy your day!")
-   
-  else:
-    st.write('Please enter a text to check whether or not it\'s about a real disaster.')
-
-    
- # First some helper functions:
+# some helper functions:
 # tweet_cleaner() does some initial cleaning of the tweet
 # tweet_to_input() gets the cleaned tweet ready to put in the model 
 
@@ -103,4 +68,97 @@ def tweet_to_input(tweet,tokenizer):
   padded_array = pad_sequences(sequence, maxlen=25)
 
   return padded_array
+
+
+
+
+
+# Define the background image URL
+background_image_url = 'https://www.computerhope.com/jargon/t/twitter.png'
+
+# Create custom HTML and CSS to set the background image as a cover
+page_bg = f"""
+<style>
+    .stApp {{
+        background-image: url("{background_image_url}");
+        background-size: cover;
+    }}
+</style>
+"""
+
+## Adding a falling animation
+flow = """
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <style>
+          @keyframes falling {
+            from {
+              transform: translateY(-10%);
+              opacity: 3;
+            }
+            to {
+              transform: translateY(100%);
+              opacity: 5;
+            }
+          }
+        
+          .raindrop {
+            position: absolute;
+            display: inline-block;
+            font-size: 180px;
+            animation: falling 20s linear infinite;
+            right: 30%;
+          }
+        
+        </style>
+        </head>
+        <body>
+          <div class="rain-container">
+            <div class="raindrop">☠️🏴‍☠️</div>
+          </div>
+        </body>
+        </html>
+        """
+        
+st.markdown(flow, unsafe_allow_html=True)
+
+
+# Apply the custom CSS to the app
+st.markdown(page_bg, unsafe_allow_html=True)
+
+
+# load the pickled files
+
+with open('../pickles/arjun_model_3.pkl', 'rb') as model_file:
+    model = pickle.load(model_file)
+    
+with open('../pickles/tokenizer_arjun_v1.pkl', 'rb') as tokenizer_file:
+    tokenizer = pickle.load(tokenizer_file)
+    
+
+# Title for our app
+st.title("Tweet Recognition")
+st.subheader('Is a tweet about a real disaster?')
+
+# Get user input
+
+user_txt = st.text_area('Enter a disaster tweet here to check whether it\'s real or not: ', max_chars = 280)
+
+
+if st.button('Submit'):
+  if len(user_txt) > 0:
+    pred_prob = model.predict(tweet_to_input(user_txt,tokenizer=tokenizer))[0][0]
+    
+    if pred_prob > 0.8:
+        st.write(f"This disaster notification is: REAL! Please stay safe!")
+    elif pred_prob > 0.4:
+        st.write(f"This disaster notification might be: REAL. Please work with your local news channel to learn more.")
+    else:
+        st.write(f"This tweet is: NOT REAL. Please enjoy your day!")
+   
+  else:
+    st.write('Please enter a text to check whether or not it\'s about a real disaster.')
+
+    
 
