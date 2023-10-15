@@ -1,13 +1,50 @@
 import pickle
 import streamlit as st
+from operator import mod
 
-import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import re
 import nltk
 
 
-# First some helper functions:
+
+
+
+# load the pickled files
+
+with open('../pickles/arjun_model_3.pkl', 'rb') as model_file:
+    model = pickle.load(model_file)
+    
+with open('../pickles/tokenizer_arjun_v1.pkl', 'rb') as tokenizer_file:
+    tokenizer = pickle.load(tokenizer_file)
+    
+# Ok 
+
+# Title for our app
+st.title("Tweet Recognition")
+st.subheader('Is a tweet about a real disaster?')
+
+# Get user input
+
+user_txt = st.text_area('Enter a disaster tweet here to check whether it\'s real or not: ', max_chars = 280)
+
+
+if st.button('Submit'):
+  if len(user_txt) > 0:
+    pred_prob = model.predict(tweet_to_input(user_txt,tokenizer=tokenizer))[0][0]
+    
+    if pred_prob > 0.8:
+        st.write(f"This disaster notification is: REAL! Please stay safe!")
+    elif pred_prob > 0.4:
+        st.write(f"This disaster notification might be: REAL. Please work with your local news channel to learn more.")
+    else:
+        st.write(f"This tweet is: NOT REAL. Please enjoy your day!")
+   
+  else:
+    st.write('Please enter a text to check whether or not it\'s about a real disaster.')
+
+    
+ # First some helper functions:
 # tweet_cleaner() does some initial cleaning of the tweet
 # tweet_to_input() gets the cleaned tweet ready to put in the model 
 
@@ -44,7 +81,7 @@ def tweet_cleaner(tweet , remove_usernames = True):
   return ' '.join(list_of_words)
 
 
-def tweet_to_input(tweet,tokenizer=tokenizer):
+def tweet_to_input(tweet,tokenizer):
   '''
   Function that transforms asingle tweet(string) into an input for the model that was trained with a particular tokenizer
   input: tweet = single tweet that is a string
@@ -67,28 +104,3 @@ def tweet_to_input(tweet,tokenizer=tokenizer):
 
   return padded_array
 
-
-
-
-# ok load the pickled files
-
-with open('../pickles/arjun_model_3.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
-    
-with open('../pickles/tokenizer_arjun_v1.pkl', 'rb') as tokenizer_file:
-    tokenizer = pickle.load(tokenizer_file)
-    
-# 
-
-# Create a title for our app
-st.title("Which author do you write like?")
-
-# Get user input
-user_text = st.text_input('Please copy-paste the tweet in question: ', max_chars = 280)
-
-# Get the prediction
-
-pred_prob = model.predict(tweet_to_input(user_text,tokenizer=tokenizer))
-
-# Display prediction
-st.write(f'Our model thinks this is {pred_prob*100}% probabilty regarding a disaster')
