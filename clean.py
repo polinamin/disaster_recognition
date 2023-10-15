@@ -1,4 +1,4 @@
-## Cleaning function Kalpa:
+#### Cleaning function Kalpa:
 def clean_the_text(text_1):  #input should be a series
     # Remove the unnecessary pattern starting from Û
     import re
