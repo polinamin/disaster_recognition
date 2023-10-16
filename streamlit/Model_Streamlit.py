@@ -43,12 +43,7 @@ def set_background(png_file):
 #    the_model = pickle.load(f)
 #  return the_model
 
-uploaded_file = st.file_uploader(
-    "Choose your database", accept_multiple_files=False)
-if uploaded_file is not None:
-    file_name = uploaded_file
-else:
-    file_name = "Polina_Model.pkl"
+file_name = pickle.load(open('Polina_Model.pkl','rb'))
 
 
 model = file_name
