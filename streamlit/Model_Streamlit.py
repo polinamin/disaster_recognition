@@ -3,7 +3,6 @@ from operator import mod
 import streamlit as st
 import pickle
 import numpy as np
-import streamlit_option_menu
 
 #def local_css(file_name):
 #    with open(file_name) as f:
@@ -34,6 +33,7 @@ def set_background(png_file):
     </style>
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
+img = "Disaster_background.png"
 
 #set_background('Disaster_background.png')
 
@@ -45,14 +45,20 @@ def set_background(png_file):
 #  return the_model
 
 #file_name = pickle.load(open('Polina_Model.pkl','rb'))
-model = pickle.load(open('saved files/Polina_Model.sav', 'rb'))
+
+uploaded_file = st.file_uploader(“Select file”,type=‘pkl’)
+if uploaded_file is not None:
+df_loadedTrans = pd.read_pickle(uploaded_file)
+
+#model = pickle.load(open('../pickles/Polina_Model.sav', 'rb'))
+st.image(img)
 
 #new_title = '<p style="font-family:sans-serif; color:White; font-size: 64px;">Tweet Recognition</p>'
 #st.markdown(new_title, unsafe_allow_html=True)
 st.title("Tweet Recognition")
 #new_subtitle = '<p style="font-family:sans-serif; color:White; font-size: 32px;">Is a tweet about a real disaster?</p>'
 #st.markdown(new_subtitle, unsafe_allow_html=True)
-st.subheader('Is a tweet about a real disaster?')
+st.subheader('Is this tweet about a real disaster?')
 
 txt = st.text_area('Enter a disaster tweet here to check whether it\'s real or not: ').strip()
 risk = st.slider('Please enter your risk threshold: ', 0.0, 1.0, 0.1)
