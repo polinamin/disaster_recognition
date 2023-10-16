@@ -44,9 +44,7 @@ def set_background(png_file):
 #    the_model = pickle.load(f)
 #  return the_model
 
-#file_name = pickle.load(open('Polina_Model.pkl','rb'))
-
-st.write("Polina_Model.pkl")
+model = pickle.load(open('Polina_Model.pkl','rb'))
 
 #model = pickle.load(open('../pickles/Polina_Model.sav', 'rb'))
 st.image(img)
