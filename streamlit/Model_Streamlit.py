@@ -46,10 +46,7 @@ img = "Disaster_background.png"
 
 #file_name = pickle.load(open('Polina_Model.pkl','rb'))
 
-uploaded_file = st.file_uploader(“Select file”,type=‘pkl’)
-if uploaded_file is not None:
-df_loadedTrans = pd.read_pickle(uploaded_file)
-
+uploaded_file = st.file_uploader("Choose a CSV file")
 #model = pickle.load(open('../pickles/Polina_Model.sav', 'rb'))
 st.image(img)
 
