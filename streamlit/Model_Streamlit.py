@@ -46,12 +46,7 @@ def set_background(png_file):
 
 #file_name = pickle.load(open('Polina_Model.pkl','rb'))
 
-uploaded_file = st.file_uploader("Choose a CSV file")
-for file in uploaded_file:
-    bytes_data = file.read()
-    st.write("File uploaded:", file.name)
-
-    st.write(bytes_data)
+st.write("Polina_Model.pkl")
 
 #model = pickle.load(open('../pickles/Polina_Model.sav', 'rb'))
 st.image(img)
