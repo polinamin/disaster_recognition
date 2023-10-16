@@ -39,7 +39,7 @@ def set_background(png_file):
 
 # @st.cache
 def load_model():
-  with open('../pickles/Polina_Model.pkl', 'rb') as f:
+  with open('Polina_Model.pkl', 'rb') as f:
     the_model = pickle.load(f)
   return the_model
 
