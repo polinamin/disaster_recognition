@@ -16,8 +16,8 @@ Our project has not only deepened our understanding of classification and natura
     - [Github](https://github.com/polinamin)
     - [LinkedIn](https://www.linkedin.com/in/polinaminkovski/)
     
-**Dr. Kalpa Henadhira Arachige** 
-    - [Github](https://github.com/kalymaan) 
+**Dr. Kalpa Henadhira Arachchige** 
+    - [Github](https://github.com/kharindra)
     -[LinkedIn](https://www.linkedin.com/in/kalpa-henadhira/)
     
 **Kalyan Lakshmanan** 
