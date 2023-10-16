@@ -33,7 +33,7 @@ def set_background(png_file):
     </style>
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
-img = "Disaster_background.png"
+#img = "Disaster_background.png"
 
 #set_background('Disaster_background.png')
 
@@ -47,6 +47,12 @@ img = "Disaster_background.png"
 #file_name = pickle.load(open('Polina_Model.pkl','rb'))
 
 uploaded_file = st.file_uploader("Choose a CSV file")
+for file in uploaded_files:
+    bytes_data = file.read()
+    st.write("File uploaded:", file.name)
+
+    st.write(bytes_data)
+
 #model = pickle.load(open('../pickles/Polina_Model.sav', 'rb'))
 st.image(img)
 
