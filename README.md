@@ -1,4 +1,4 @@
-# Monitoring tweets to determine potential Disasters
+# Disaster Tweet Recognition
 
 Twitter/X.com plays a crucial role as a communication platform during emergencies, facilitated by the widespread use of smartphones that allow real-time reporting of critical incidents. Consequently, there is a growing interest among various organizations, such as disaster relief agencies and news outlets, in systematically tracking Twitter for such information.
 
@@ -12,18 +12,25 @@ Our project has not only deepened our understanding of classification and natura
 
 ### Contributors:
 
-    - Polina Minkovski - [Github](https://github.com/polinamin) [LinkedIn](https://www.linkedin.com/in/polinaminkovski/)
-    - Dr. Kalpa Henadhira Arachige - [Github](https://github.com/kalymaan) [LinkedIn](https://www.linkedin.com/in/kalpa-henadhira/)
-    - Kalyan Lakshmanan - [Github](https://github.com/polinamin) [LinkedIn](https://www.linkedin.com/in/kalyanlakshmanan/) 
+**Polina Minkovski** 
+    - [Github](https://github.com/polinamin)
+    - [LinkedIn](https://www.linkedin.com/in/polinaminkovski/)
+    
+**Dr. Kalpa Henadhira Arachige** 
+    - [Github](https://github.com/kalymaan) 
+    -[LinkedIn](https://www.linkedin.com/in/kalpa-henadhira/)
+    
+**Kalyan Lakshmanan** 
+    - [Github](https://github.com/polinamin) 
+    - [LinkedIn](https://www.linkedin.com/in/kalyanlakshmanan/) 
 
 ### File structure:
 
 - Code
-    - reddit_data_collection.ipynb
-        - Explanation and execution of reddit question-answer pair scraping
-    - 
-    -
-    -
+    - EDA - Cleaning
+        - Various notebooks labeled by contributor
+    - Modeling
+        - Various notebooks labeled by contributor
 - Data
     - train.csv
         - **id** (*int64*): A unique identifier for each tweet.
@@ -32,16 +39,14 @@ Our project has not only deepened our understanding of classification and natura
         - **location** (*string*): The originating location of the tweet. This field may also be blank.
         - **target** (*int64*): A binary indicator (1 or 0) that classifies the tweet as either a disaster tweet (1) or a non-disaster tweet (0).
     - test.csv - same as train.csv with no 'target'
-    -
-    -
+    - Various other cleaned data used in modeling
         
 - Images - Various images used throughout the project
 
 - Streamlit 
-    - reddit_questions1-5.csv - csvs generated from reddit scraping
-    -
-    -
-    -
+    - Model_Streamlit.py - streamlit app
+    - Various other files utilized in other apps labeled by contributor
+    
 - Submissions - files used for an [external competition](https://www.kaggle.com/competitions/nlp-getting-started/overview)
 
 ### Special Thanks
