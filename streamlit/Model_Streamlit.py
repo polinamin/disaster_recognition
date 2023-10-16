@@ -33,7 +33,7 @@ def set_background(png_file):
     </style>
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
-#img = "Disaster_background.png"
+img = "Disaster_background.png"
 
 #set_background('Disaster_background.png')
 
@@ -44,7 +44,7 @@ def set_background(png_file):
 #    the_model = pickle.load(f)
 #  return the_model
 
-model = pickle.load(open('Polina_Model.pkl','rb'))
+model = pickle.load(open('../pickles/Polina_Model.pkl','rb'))
 
 #model = pickle.load(open('../pickles/Polina_Model.sav', 'rb'))
 st.image(img)
