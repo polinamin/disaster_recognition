@@ -3,6 +3,7 @@ from operator import mod
 import streamlit as st
 import pickle
 import numpy as np
+import streamlit_option_menu
 
 #def local_css(file_name):
 #    with open(file_name) as f:
