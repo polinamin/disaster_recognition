@@ -38,12 +38,20 @@ def set_background(png_file):
 
 
 # @st.cache
-def load_model():
-  with open('Polina_Model.pkl', 'rb') as f:
-    the_model = pickle.load(f)
-  return the_model
+#def load_model():
+#  with open('Polina_Model.pkl', 'rb') as f:
+#    the_model = pickle.load(f)
+#  return the_model
 
-model = load_model()
+uploaded_file = st.file_uploader(
+    "Choose your database", accept_multiple_files=False)
+if uploaded_file is not None:
+    file_name = uploaded_file
+else:
+    file_name = "Polina_Model.pkl"
+
+
+model = file_name
 #new_title = '<p style="font-family:sans-serif; color:White; font-size: 64px;">Tweet Recognition</p>'
 #st.markdown(new_title, unsafe_allow_html=True)
 st.title("Tweet Recognition")
