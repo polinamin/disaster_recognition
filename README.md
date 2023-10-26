@@ -10,25 +10,11 @@ For our app, we decided to implement a Bernoulli Naïve Bayes model due to its r
 
 Our project has not only deepened our understanding of classification and natural language processing (NLP) but has also resulted in a functional prototype that we are proud of. Looking ahead, we aim to further enhance our model and implement it for real-time classification of live-streamed tweets, ensuring rapid identification of disaster-related content with precision and efficiency.
 
-### Contributors:
-
-**Polina Minkovski** 
-    - [Github](https://github.com/polinamin)
-    - [LinkedIn](https://www.linkedin.com/in/polinaminkovski/)
-    
-**Dr. Kalpa Henadhira Arachchige** 
-    - [Github](https://github.com/kharindra)
-    -[LinkedIn](https://www.linkedin.com/in/kalpa-henadhira/)
-    
-**Kalyan Lakshmanan** 
-    - [Github](https://github.com/polinamin) 
-    - [LinkedIn](https://www.linkedin.com/in/kalyanlakshmanan/) 
-
 ### File structure:
 
 - Code
     - **Data_Model_Bernoulli.ipynb** 
-        - A thorough walkthrough of our final model and start to end process - Bernouli Naive Bayes
+        - A thorough walkthrough of our final model and start to end process - Bernoulli Naive Bayes
         - Includes:
             - Exploration of Data with relevant visualizations
             - Various preprocessing techniques - CountVectorizer vs. TFIDF(Term-Frequency-Inverse-Document-Frequency) with other considerations
@@ -40,6 +26,9 @@ Our project has not only deepened our understanding of classification and natura
             - A thorough walkthrough of utilizing GloVe Embeddings to feed corpus into various LSTM Networks. Used in Kaggle competition, however, for this project, we prioritized Sensitivity, therefore, was not chosen for final App
         - **Kalpa__notebook.ipynb**
             - A thorough walkthrough of preprocessing, visualizations, and more Machine Learning Techniques. Notably, Logistic Regression, Random Forest, KNN, MNB, and Linear SVC. Diligent model Evaluation -- differing preprocessing techniques than the final model used in project
+        - **Data_Model_NN_Polina.ipynb**
+            - Requires TensorFlow
+            - An Exploration of further LSTM architectures. Most notably, an experimentation and utilization of Word2Vec Embeddings - trained on the corpus of tweets
         - Kalpa_Kaggle - various csvs used in prototyping phase
         
 - Data
@@ -65,6 +54,51 @@ Our project has not only deepened our understanding of classification and natura
     - trial and error - other files NOT used in final application
     
 - Submissions - files used for an [external kaggle competition](https://www.kaggle.com/competitions/nlp-getting-started/overview)
+
+### Software Requirements:
+    - Pandas
+    - Scikit-learn 
+    - NLTK 
+    - Numpy 
+    - Matplotlib 
+    - Seaborn 
+    - TensorFlow (Keras Front-end) - utilized in marked notebooks(see File Structure above)
+    
+### Data Description:
+
+Data Acquisition : [From this kaggle competition](https://www.kaggle.com/competitions/nlp-getting-started/data) -- future ingestion could be through X.com API
+
+Data Ingestion and Cleaning: Standard practices of tokenization and stop word remoal were used. Various techniques were explored including, stemming, lemmatization, removal of usernames/hashtags. Thorough walkthrough found in notebooks.
+
+Only 'text' feature was used for this prototype. Future versions will include experimentation with other features
+
+train.csv - 7,613 labeled tweets
+
+test.csv - 3,263 unlabeld tweets
+
+
+**Columns**:
+
+    - id - a unique identifier for each tweet
+    -text - the text of the tweet
+    -location - the location the tweet was sent from (may be blank)
+    -keyword - a particular keyword from the tweet (may be blank)
+    -target - in train.csv only, this denotes whether a tweet is about a real disaster (1) or not (0)
+
+
+### Contributors:
+
+**Polina Minkovski** 
+    - [Github](https://github.com/polinamin)
+    - [LinkedIn](https://www.linkedin.com/in/polinaminkovski/)
+    
+**Dr. Kalpa Henadhira Arachchige** 
+    - [Github](https://github.com/kharindra)
+    -[LinkedIn](https://www.linkedin.com/in/kalpa-henadhira/)
+    
+**Kalyan Lakshmanan** 
+    - [Github](https://github.com/polinamin) 
+    - [LinkedIn](https://www.linkedin.com/in/kalyanlakshmanan/) 
 
 ### Special Thanks
 - To our advisors: Musfiqur Rahman, Sonyah Seiden, and Eric Bayless
