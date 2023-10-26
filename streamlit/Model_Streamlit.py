@@ -40,13 +40,12 @@ img = "Disaster_background.png"
 
 # @st.cache
 #def load_model():
-#  with open('Polina_Model.pkl', 'rb') as f:
+#  with open('Bernoulli_Model.pkl', 'rb') as f:
 #    the_model = pickle.load(f)
 #  return the_model
 
 model = pickle.load(open('../pickles/Bernoulli_Model.pkl','rb'))
 
-#model = pickle.load(open('../pickles/Polina_Model.sav', 'rb'))
 st.image(img)
 
 #new_title = '<p style="font-family:sans-serif; color:White; font-size: 64px;">Tweet Recognition</p>'

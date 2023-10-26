@@ -12,7 +12,7 @@ Our project has not only deepened our understanding of classification and natura
 
 ### File structure:
 
-- Code
+- Code folder
     - **Data_Model_Bernoulli.ipynb** 
         - A thorough walkthrough of our final model and start to end process - Bernoulli Naive Bayes
         - Includes:
@@ -20,7 +20,7 @@ Our project has not only deepened our understanding of classification and natura
             - Various preprocessing techniques - CountVectorizer vs. TFIDF(Term-Frequency-Inverse-Document-Frequency) with other considerations
             - Experimentation with various techniques including: Logistic Regression, Decision Trees, ADA Boosted Random Forest, and Naive Bayes
             - Model Evaluation -- MnB with a 0.2 decision threshold was found to produce the best Sensitivity & Accuracy
-    - trial and error - other explorations
+    - **trial and error** folder: contains other models and explorations
         - **GloVe_LSTM.ipynb** 
             - Requires TensorFlow and GloVe Embeddings as described in the top cell of notebook
             - A thorough walkthrough of utilizing GloVe Embeddings to feed corpus into various LSTM Networks. Used in Kaggle competition, however, for this project, we prioritized Sensitivity, therefore, was not chosen for final App
@@ -29,9 +29,9 @@ Our project has not only deepened our understanding of classification and natura
         - **Data_Model_NN_Polina.ipynb**
             - Requires TensorFlow
             - An Exploration of further LSTM architectures. Most notably, an experimentation and utilization of Word2Vec Embeddings - trained on the corpus of tweets
-        - Kalpa_Kaggle - various csvs used in prototyping phase
+        - **Kalpa_Kaggle** folder: contains csv files used/created in the prototyping phase
         
-- Data
+- Data folder
     - train.csv
         - **id** (*int64*): A unique identifier for each tweet.
         - **text** (*string*): The textual content of the tweet.
@@ -39,21 +39,23 @@ Our project has not only deepened our understanding of classification and natura
         - **location** (*string*): The originating location of the tweet. This field may also be blank.
         - **target** (*int64*): A binary indicator (1 or 0) that classifies the tweet as either a disaster tweet (1) or a non-disaster tweet (0).
     - test.csv - same as train.csv with no 'target'
-    - misc data - Various other cleaned data used in modeling
+    - **misc data** folder: contains other cleaned data used/created in modeling
         
-- Images - Various images used throughout the project
+- Images folder
+    - Images used /created throughout the project
 
-- pickles
-    - **Bernoulli_Model.pkl** - Final pickled model that is used in Streamlit App
-    - trial and error - Various other miscellaneous pickled objects used in prototyping phase
+- Pickles folder
+    - **Bernoulli_Model.pkl** - Final pickled model that is used in the Streamlit App
+    - **trial and error** folder: contains other miscellaneous pickled objects used in prototyping phase
  
 
-- Streamlit 
-    - **Model_Streamlit.py** - streamlit app
-    - Various other files utilized in app
-    - trial and error - other files NOT used in final application
+- Streamlit folder
+    - **Model_Streamlit.py** - streamlit App code
+    - Files utilized in the App
+    - **trial and error** folder: contains other files NOT used in final application
     
-- Submissions - files used for an [external kaggle competition](https://www.kaggle.com/competitions/nlp-getting-started/overview)
+- Submissions folder
+    - Files used for an [external kaggle competition](https://www.kaggle.com/competitions/nlp-getting-started/overview)
 
 ### Software Requirements:
     - Pandas
@@ -66,24 +68,23 @@ Our project has not only deepened our understanding of classification and natura
     
 ### Data Description:
 
-Data Acquisition : [From this kaggle competition](https://www.kaggle.com/competitions/nlp-getting-started/data) -- future ingestion could be through X.com API
+Data Acquisition: [From this kaggle competition](https://www.kaggle.com/competitions/nlp-getting-started/data) -- future ingestion could be through X.com API
 
-Data Ingestion and Cleaning: Standard practices of tokenization and stop word remoal were used. Various techniques were explored including, stemming, lemmatization, removal of usernames/hashtags. Thorough walkthrough found in notebooks.
+Data Ingestion and Cleaning: Standard practices of tokenization and stop word removal were used. Various techniques were explored including, stemming, lemmatization, removal of duplicates, usernames, URLs, and emoticons. Thorough walkthrough found in notebooks.
 
-Only 'text' feature was used for this prototype. Future versions will include experimentation with other features
+Only 'text' feature was used for this prototype. Future versions will include experimentation with other features.
 
 train.csv - 7,613 labeled tweets
 
 test.csv - 3,263 unlabeld tweets
 
 
-**Columns**:
-
+#### Columns:
     - id - a unique identifier for each tweet
-    -text - the text of the tweet
-    -location - the location the tweet was sent from (may be blank)
-    -keyword - a particular keyword from the tweet (may be blank)
-    -target - in train.csv only, this denotes whether a tweet is about a real disaster (1) or not (0)
+    - text - the text of the tweet
+    - location - the location the tweet was sent from (may be blank)
+    - keyword - a particular keyword from the tweet (may be blank)
+    - target - in train.csv only, this denotes whether a tweet is about a real disaster (1) or not (0)
 
 
 ### Contributors:
