@@ -44,7 +44,7 @@ img = "Disaster_background.png"
 #    the_model = pickle.load(f)
 #  return the_model
 
-model = pickle.load(open('../pickles/Bernoulli_Model.pkl','rb'))
+model = pickle.load(open('Bernoulli_Model.pkl','rb'))
 
 st.image(img)
 
