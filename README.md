@@ -4,7 +4,7 @@ Twitter/X.com plays a crucial role as a communication platform during emergencie
 
 Our project, led by a team of three consultants, focuses on the development of a tweet classification model capable of distinguishing between tweets related to disasters and those that are not. We have also created a functional prototype using Streamlit, allowing users to input a tweet and receive an instant assessment regarding its relevance to an emergency situation.
 
-Throughout our modeling journey, we explored various machine learning algorithms, including LSTM, Random Forest Classifier, and Logistic Regression classification. In addition, we experimented with advanced techniques such as Word2Vec and pretrained embeddings, such as GloVe, to enhance the processing of our data.
+Throughout our modeling journey, we explored various machine learning algorithms, including LSTM, Random Forest Classifier, and Logistic Regression classification. In addition, we experimented with advanced techniques, such as Word2Vec, and pretrained embeddings, such as GloVe, to enhance the processing of our data.
 
 For our app, we decided to implement a Bernoulli Naïve Bayes model due to its remarkable balance between accuracy, minimal overfitting, and high sensitivity. This choice reflects our priority in minimizing False Negatives, ensuring that tweets related to genuine disasters are not misclassified as 'safe' tweets.
 
@@ -70,7 +70,7 @@ Our project has not only deepened our understanding of classification and natura
 
 Data Acquisition: [From this kaggle competition](https://www.kaggle.com/competitions/nlp-getting-started/data) -- future ingestion could be through X.com API
 
-Data Ingestion and Cleaning: Standard practices of tokenization and stop word removal were used. Various techniques were explored including, stemming, lemmatization, removal of duplicates, usernames, URLs, and emoticons. Thorough walkthrough found in notebooks.
+Data Ingestion and Cleaning: Standard practices of tokenization and stop word removal were used. Various techniques were explored including stemming, lemmatization, removal of duplicates, usernames, URLs, and emoticons. Thorough walkthrough found in notebooks.
 
 Only 'text' feature was used for this prototype. Future versions will include experimentation with other features.
 
@@ -93,7 +93,7 @@ test.csv - 3,263 unlabeld tweets
     - [Github](https://github.com/polinamin)
     - [LinkedIn](https://www.linkedin.com/in/polinaminkovski/)
     
-**Dr. Kalpa Henadhira Arachchige** 
+**Kalpa Henadhira Arachchige** 
     - [Github](https://github.com/kharindra)
     -[LinkedIn](https://www.linkedin.com/in/kalpa-henadhira/)
     
