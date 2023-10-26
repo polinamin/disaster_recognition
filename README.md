@@ -27,10 +27,21 @@ Our project has not only deepened our understanding of classification and natura
 ### File structure:
 
 - Code
-    - EDA - Cleaning
-        - Various notebooks labeled by contributor
-    - Modeling
-        - Various notebooks labeled by contributor
+    - **Data_Model_Bernoulli.ipynb** 
+        - A thorough walkthrough of our final model and start to end process - Bernouli Naive Bayes
+        - Includes:
+            - Exploration of Data with relevant visualizations
+            - Various preprocessing techniques - CountVectorizer vs. TFIDF(Term-Frequency-Inverse-Document-Frequency) with other considerations
+            - Experimentation with various techniques including: Logistic Regression, Decision Trees, ADA Boosted Random Forest, and Naive Bayes
+            - Model Evaluation -- MnB with a 0.2 decision threshold was found to produce the best Sensitivity & Accuracy
+    - trial and error - other explorations
+        - **GloVe_LSTM.ipynb** 
+            - Requires TensorFlow and GloVe Embeddings as described in the top cell of notebook
+            - A thorough walkthrough of utilizing GloVe Embeddings to feed corpus into various LSTM Networks. Used in Kaggle competition, however, for this project, we prioritized Sensitivity, therefore, was not chosen for final App
+        - **Kalpa__notebook.ipynb**
+            - A thorough walkthrough of preprocessing, visualizations, and more Machine Learning Techniques. Notably, Logistic Regression, Random Forest, KNN, MNB, and Linear SVC. Diligent model Evaluation -- differing preprocessing techniques than the final model used in project
+        - Kalpa_Kaggle - various csvs used in prototyping phase
+        
 - Data
     - train.csv
         - **id** (*int64*): A unique identifier for each tweet.
@@ -39,15 +50,21 @@ Our project has not only deepened our understanding of classification and natura
         - **location** (*string*): The originating location of the tweet. This field may also be blank.
         - **target** (*int64*): A binary indicator (1 or 0) that classifies the tweet as either a disaster tweet (1) or a non-disaster tweet (0).
     - test.csv - same as train.csv with no 'target'
-    - Various other cleaned data used in modeling
+    - misc data - Various other cleaned data used in modeling
         
 - Images - Various images used throughout the project
 
+- pickles
+    - **Bernoulli_Model.pkl** - Final pickled model that is used in Streamlit App
+    - trial and error - Various other miscellaneous pickled objects used in prototyping phase
+ 
+
 - Streamlit 
-    - Model_Streamlit.py - streamlit app
-    - Various other files utilized in other apps labeled by contributor
+    - **Model_Streamlit.py** - streamlit app
+    - Various other files utilized in app
+    - trial and error - other files NOT used in final application
     
-- Submissions - files used for an [external competition](https://www.kaggle.com/competitions/nlp-getting-started/overview)
+- Submissions - files used for an [external kaggle competition](https://www.kaggle.com/competitions/nlp-getting-started/overview)
 
 ### Special Thanks
 - To our advisors: Musfiqur Rahman, Sonyah Seiden, and Eric Bayless
